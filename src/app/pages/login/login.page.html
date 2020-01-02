@@ -1,0 +1,22 @@
+<app-header title="login" backRoute="/inicio"></app-header>
+
+<ion-content class="ion-padding" fullscreen>
+
+<form [formGroup]="datos" (submit)="onSubmit()">
+    <ion-list>
+        <ion-item>
+            <ion-label position="floating">Usuario</ion-label>
+            <ion-input name="username" formControlName="username"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" name="password" formControlName="password"></ion-input>
+        </ion-item>
+        <br>
+        <ion-button type="submit" expand="full">
+            LOGIN
+        </ion-button>
+    </ion-list>
+</form>
+
+</ion-content>

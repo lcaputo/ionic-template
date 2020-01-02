@@ -1,0 +1,63 @@
+<app-header title="fab" backRoute="/inicio"></app-header>
+
+<ion-content class="ion-padding" fullscreen>
+  
+  <ion-button expand="full" fill="outline" shape="round">
+    Go Bottom
+  </ion-button>
+
+  <ion-list>
+    <ion-item *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]"> 
+      Página {{ i }}
+    </ion-item>
+  </ion-list>
+
+  <!-- ION FAB -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+
+    <ion-fab-list side="top">
+      <ion-fab-button color="google">
+        <ion-icon name="logo-google"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="twitter">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="facebook">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+
+    <ion-fab-list side="start">
+      <ion-fab-button color="danger">
+        <ion-icon name="close"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="success">
+        <ion-icon name="checkmark"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="primary">
+        <ion-icon name="send"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="warning">
+        <ion-icon name="cart" color="dark"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+
+  </ion-fab>
+
+
+
+  <!-- FOOTER -->
+  <ion-footer>
+    <ion-toolbar>
+      <ion-title>Este es el footer</ion-title>
+    </ion-toolbar>
+    <ion-button expand="full" fill="outline" shape="round">
+      Go Top
+    </ion-button>
+  </ion-footer>
+
+</ion-content>

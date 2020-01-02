@@ -1,0 +1,11 @@
+<ion-header no-border >
+  <ion-toolbar transparent>
+
+    <ion-buttons slot="start" *ngIf="backRoute">
+      <ion-back-button text="Back" [defaultHref]="backRoute"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-uppercase"> {{ title }} </ion-title>
+
+  </ion-toolbar>
+</ion-header>

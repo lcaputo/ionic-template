@@ -1,0 +1,56 @@
+<app-header title="chip" backRoute="/inicio"></app-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>BASIC</ion-list-header>
+    <ion-chip>
+      <ion-label>Default</ion-label>
+    </ion-chip>
+    <ion-chip>
+      <ion-icon name="checkmark-circle-outline"></ion-icon>
+      <ion-label>Icon</ion-label>
+    </ion-chip>
+    <ion-chip>
+      <ion-avatar>
+        <img
+          src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"
+        />
+      </ion-avatar>
+      <ion-label>Avatar</ion-label>
+    </ion-chip>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>COLORS</ion-list-header>
+    <ion-chip *ngFor="let chip of chips" [color]="chip.color">
+      <ion-label [color]="chip.color"
+        >{{chip.color | titlecase}} Label</ion-label
+      >
+    </ion-chip>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>OUTLINE</ion-list-header>
+    <ion-chip *ngFor="let chip of chips" [color]="chip.color" outline="true">
+      <ion-label [color]="chip.color"
+        >{{chip.color | titlecase}} Label</ion-label
+      >
+    </ion-chip>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>ICONS</ion-list-header>
+    <ion-chip *ngFor="let chip of chips" [color]="chip.color" outline="true">
+      <ion-icon
+        *ngIf="chip.icon"
+        [name]="chip.icon"
+        [color]="chip.color"
+      ></ion-icon>
+      <ion-label [color]="chip.color"
+        >{{chip.color | titlecase}} Label</ion-label
+      >
+      <ion-icon name="close-circle" [color]="chip.color"></ion-icon>
+    </ion-chip>
+  </ion-list>
+
+</ion-content>

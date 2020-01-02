@@ -74,4 +74,54 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** GOOGLE **/
+  --ion-color-google: #DC4E41;
+  --ion-color-google-rgb: 56, 128, 255;
+  --ion-color-google-contrast: #ffffff;
+  --ion-color-google-contrast-rgb: 255, 255, 255;
+  --ion-color-google-shade: #DC4E41;
+  --ion-color-google-tint: #ffffff;
+
+  /** TWITTER **/
+  --ion-color-twitter: #22BDFF;
+  --ion-color-twitter-rgb: 56, 128, 255;
+  --ion-color-twitter-contrast: #EBEBEB;
+  --ion-color-twitter-contrast-rgb: 255, 255, 255;
+  --ion-color-twitter-shade: #22BDFF;
+  --ion-color-twitter-tint: #EBEBEB;
+
+  /** FACEBOOK **/
+  --ion-color-facebook: #3662A1;
+  --ion-color-facebook-rgb: 56, 128, 255;
+  --ion-color-facebook-contrast: #EBEBEB;
+  --ion-color-facebook-contrast-rgb: 255, 255, 255;
+  --ion-color-facebook-shade: #3662A1;
+  --ion-color-facebook-tint: #EBEBEB;
+}
+
+
+.ion-color-google {
+  --ion-color-base: var(--ion-color-google) !important;
+  --ion-color-base-rgb: var(--ion-color-google-rgb) !important;
+  --ion-color-contrast: var(--ion-color-google-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-google-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-google-shade) !important;
+  --ion-color-tint: var(--ion-color-google-tint) !important;
+}
+.ion-color-twitter {
+  --ion-color-base: var(--ion-color-twitter) !important;
+  --ion-color-base-rgb: var(--ion-color-twitter-rgb) !important;
+  --ion-color-contrast: var(--ion-color-twitter-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-twitter-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-twitter-shade) !important;
+  --ion-color-tint: var(--ion-color-twitter-tint) !important;
+}
+.ion-color-facebook {
+  --ion-color-base: var(--ion-color-facebook) !important;
+  --ion-color-base-rgb: var(--ion-color-facebook-rgb) !important;
+  --ion-color-contrast: var(--ion-color-facebook-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-facebook-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-facebook-shade) !important;
+  --ion-color-tint: var(--ion-color-facebook-tint) !important;
 }

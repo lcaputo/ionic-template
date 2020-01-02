@@ -1,0 +1,42 @@
+<app-header title="avatar" backRoute="/inicio"></app-header>
+
+<ion-content padding>
+
+  <ion-avatar>
+    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+  </ion-avatar>
+  <br>
+  <ion-chip>
+    <ion-avatar>
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+    <ion-label>Chip Avatar</ion-label>
+  </ion-chip>
+  <br>
+  <ion-item>
+    <ion-avatar slot="start">
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+    <ion-label>Item Avatar</ion-label>
+  </ion-item>
+
+  <br>
+
+  <ion-chip color="primary" *ngFor="let i of [1,1,1,1,1,1]">
+    <ion-avatar>
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+    <ion-label>Chip Card</ion-label>
+  </ion-chip>
+
+  <ion-list>
+    <ion-item *ngFor="let i of [1,1,1,1,1,1]">
+      <ion-avatar slot="start">
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+      <ion-label> persona {{i}} </ion-label>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>

@@ -1,0 +1,14 @@
+<app-header title="checkbox" backRoute="/inicio"></app-header>
+
+<ion-content padding>
+ 
+  <ion-list>
+    <ion-list-header>CHARACTERS</ion-list-header>
+    <ion-item *ngFor="let cb of checkboxes">
+      <ion-checkbox slot="start" [color]="cb.color" 
+      [checked]="cb.checked" [disabled]="cb.disabled"></ion-checkbox>
+      <ion-label> {{cb.text}} </ion-label>
+    </ion-item>
+  </ion-list>
+  
+</ion-content>
