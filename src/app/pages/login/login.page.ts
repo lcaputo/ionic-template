@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AppService } from 'src/app/services/app.service';
+import { Location } from '@angular/common';
+import { AppSettings } from 'src/app/settings/settings';
+import { Settings } from 'src/app/settings/settings.model';
 
 @Component({
   selector: 'app-login',
@@ -11,13 +14,17 @@ import { AppService } from 'src/app/services/app.service';
 export class LoginPage implements OnInit {
 
   public datos: FormGroup;
+  public settings: Settings;
 
   constructor(
     public appService: AppService,
     public auth: AuthService,
+    public location: Location,
     public formBuilder: FormBuilder,
+    public appSettings: AppSettings,
     ) 
   { 
+    this.settings = this.appSettings.settings;
     this.datos = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
@@ -32,7 +39,8 @@ export class LoginPage implements OnInit {
       (token: any) => {
         token = token.access
         this.auth.setToken(token);
-        return this.auth.obtenerDatosToken(token);
+        this.settings.authenticated = true;
+        this.location.back();
       }
     );
   }

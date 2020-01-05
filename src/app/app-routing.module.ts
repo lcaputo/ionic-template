@@ -54,7 +54,7 @@ const routes: Routes = [
   },
   {
     path: 'api-rest',
-    //canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     loadChildren: () => import('./pages/api-rest/api-rest.module').then( m => m.ApiRestPageModule)
   },
 ];

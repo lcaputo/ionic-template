@@ -7,5 +7,15 @@
 
     <ion-title class="ion-text-uppercase"> {{ title }} </ion-title>
 
+    <ion-button slot="end" color="success" shape="round" 
+    *ngIf="!settings.authenticated" (click)="login()">
+      <ion-icon name="ios-log-in" color="dark"></ion-icon>
+    </ion-button>
+
+    <ion-button slot="end" color="danger" shape="round"
+    *ngIf="settings.authenticated" (click)="logout()">
+      <ion-icon name="md-log-out" color="light"></ion-icon>
+    </ion-button>
+
   </ion-toolbar>
 </ion-header>

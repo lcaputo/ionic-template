@@ -22,22 +22,22 @@ export class AppService {
 
   private getHeaders() {
     this.token = sessionStorage.getItem('token');
-    
-/*     if (this.token == null || this.token == undefined || this.token == '') {
+    if (this.token == null || this.token == undefined || this.token == '') {
       this.router.navigate(['/login']);
     } else {
       this.httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + this.token }) };
-    } */
+    }
   }
 
   //GET
   get(ruta: string) {
-    this.getHeaders(); return this.http.get<any>(urlBack.concat(ruta), this.httpOptions);
-    if (this.auth.isAuthenticated()) {
-/*       let exp = this.auth.isTokenExpired();
+    if (this.auth.Authenticate()) {
+      let exp = this.auth.isTokenExpired();
       if (!exp) {
         this.getHeaders(); return this.http.get<any>(urlBack.concat(ruta), this.httpOptions);
-      } */
+      }
+    } else {
+      this.router.navigate(['/login']);
     }
     //this.clearSession();
   }
@@ -74,6 +74,9 @@ export class AppService {
     }
     //this.clearSession();
   }
+
+
+
 
 /*   getIp() {
     return this.http.get<any>(urlBack.concat('ip'));

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Usuario } from './usuario';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class AuthService {
 
   constructor(
     private http: HttpClient, 
-
+    private router: Router
     ) { }
 
   public get usuario(): Usuario {
@@ -62,16 +63,29 @@ export class AuthService {
     }
     else{
       sessionStorage.clear();
-      //this.router.navigate(['login']);
+      //this.router.navigate(['/login']);
     }
+  }
+
+  Authenticate(): boolean {
+    let token = sessionStorage.getItem('token');
+    let payload = this.obtenerDatosToken(token);
+    if (payload != null && payload.length > 0 //payload.user_name && payload.user_name.length > 0
+      ) {
+      return true;
+    }
+    this.router.navigate(['/login']);
+    return false;
   }
 
   isAuthenticated(): boolean {
     let token = sessionStorage.getItem('token');
     let payload = this.obtenerDatosToken(token);
-    if (payload != null && payload.user_name && payload.user_name.length > 0) {
+    if (payload != null && payload.length > 0 //payload.user_name && payload.user_name.length > 0
+      ) {
       return true;
     }
+    //this.router.navigate(['/login']);
     return false;
   }
 
@@ -87,8 +101,9 @@ export class AuthService {
     this._usuario = null;
     sessionStorage.clear();
     sessionStorage.removeItem('token');
-    sessionStorage.removeItem('usuario');
-    window.location.replace(this.url+'#/login');
+    //this.router.navigate(['/'])
+    //sessionStorage.removeItem('usuario');
+    //window.location.replace(this.url+'#/login');
   }
 
   obtenerDatosUser() {

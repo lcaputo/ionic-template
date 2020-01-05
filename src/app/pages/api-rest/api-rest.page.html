@@ -1,7 +1,18 @@
 <app-header title="api-rest" backRoute="/inicio"></app-header>
 
 <ion-content class="ion-padding">
+  
+    <!-- ION FAB -->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    
+      <ion-fab-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+  
+    </ion-fab>
+  
   <ion-list>
-    <!-- <ion-item *ngFor="let item of items"> {{ item.name }} </ion-item> -->
+    <ion-item *ngFor="let item of items"> {{ item.title }} </ion-item>
   </ion-list>
+
 </ion-content>
